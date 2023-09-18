@@ -14,6 +14,9 @@ function TodoForm() {
     <form className="flex"
       onSubmit={(e) => {
         e.preventDefault();
+        if(todo.length === 0){
+          return alert('Please enter your todo')
+        }
         setTodos([...todos, { id: idGenerator(), title: todo, completed: false }])
         setTodo('')
       }}
